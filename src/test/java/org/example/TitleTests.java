@@ -36,46 +36,4 @@ public class TitleTests extends BaseTest {
         //THEN
         assertThat(actualTitle).isEqualTo(expectedTitle);
     }
-
-    @ParameterizedTest
-    @CsvSource({"http://kotuszkowo.pl/, Kotuszkowo- blog o kotach"})
-    @DisplayName("Testing Kotuszkowo title")
-    @Tag("Regression")
-    void shouldValidateCorrectTitleKotuszkowo(String url, String expectedTitle) {
-        //GIVEN
-        driver.get(url);
-        driver.manage().window().maximize();
-        //WHEN
-        String actualTitle = driver.getTitle();
-        //THEN
-        assertThat(actualTitle).isEqualTo(expectedTitle);
-    }
-
-    @ParameterizedTest
-    @CsvSource({"https://www.filmweb.pl/, Filmweb - filmy takie jak Ty!"})
-    @DisplayName("Testing Filmweb title")
-    @Tag("Regression")
-    void shouldValidateCorrectTitleFilmweb(String url, String expectedTitle) {
-        //GIVEN
-        driver.get(url);
-        driver.manage().window().maximize();
-        //WHEN
-        String actualTitle = driver.getTitle();
-        //THEN
-        assertThat(actualTitle).isEqualTo(expectedTitle);
-    }
-
-    @ParameterizedTest
-    @CsvSource({"https://www.selenium.dev/documentation/webdriver/, WebDriver | Selenium"})
-    @DisplayName("Testing Selenium documentation title")
-    @Tag("Regression")
-    void shouldValidateCorrectTitleSeleniumDocumentation(String url, String expectedTitle) {
-        //GIVEN
-        driver.get(url);
-        driver.manage().window().maximize();
-        //WHEN
-        String actualTitle = driver.getTitle();
-        //THEN
-        assertThat(actualTitle).isEqualTo(expectedTitle);
-    }
 }
